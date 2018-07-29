@@ -7,6 +7,7 @@
 	set dir=/tmp/
 	set relativenumber 
 	set number
+    set clipboard=unamed
 
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
