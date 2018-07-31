@@ -5,6 +5,7 @@
 	setopt share_history # setopt inc_append_history
 
 # Aliases
+	alias ll="ls -l"
 	alias v="vim -p"
 	mkdir -p /tmp/log
 	
@@ -20,7 +21,7 @@
 	export VISUAL=vim
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 	export PATH="$PATH:/usr/local/share/dotnet"
 	export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin/"
 	export PATH="/usr/local/opt/llvm/bin:$PATH"
@@ -51,6 +52,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 # For vim mappings: 
 	stty -ixon
 
+plugins=(sudo git taskwarrior tmux tmuxinator)
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
 source ~/dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
