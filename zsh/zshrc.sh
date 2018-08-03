@@ -1,14 +1,14 @@
 # Vars
 	HISTFILE=~/.zsh_history
-	SAVEHIST=1000 
-	setopt inc_append_history # To save every command before it is executed 
+	SAVEHIST=1000
+	setopt inc_append_history # To save every command before it is executed
 	setopt share_history # setopt inc_append_history
 
 # Aliases
 	alias ll="ls -l"
 	alias v="vim -p"
 	mkdir -p /tmp/log
-	
+  alias vi='mvim -v'
 	alias yd='youtube-dl -x --audio-format "mp3"'
 	alias ydm='youtube-dl -x --audio-format "mp3" --metadata-from-title "%(artist)s - %(title)s"'
 	alias cleos='docker exec eosio /opt/eosio/bin/cleos --wallet-url http://localhost:8888'
@@ -18,20 +18,20 @@
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
 # Settings
-	export VISUAL=vim
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 	export PATH="$PATH:/usr/local/share/dotnet"
 	export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin/"
 	export PATH="/usr/local/opt/llvm/bin:$PATH"
+  export VISUAL=vi
 
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
 #Functions
 	# Loop a command and show the output in vim
 	loop() {
-		echo ":cq to quit\n" > /tmp/log/output 
+		echo ":cq to quit\n" > /tmp/log/output
 		fc -ln -1 > /tmp/log/program
 		while true; do
 			cat /tmp/log/program >> /tmp/log/output ;
@@ -49,7 +49,7 @@ source ~/dotfiles/zsh/plugins/fixls.zsh
 	}
 	alias cd="c"
 
-# For vim mappings: 
+# For vim mappings:
 	stty -ixon
 
 plugins=(sudo git taskwarrior tmux tmuxinator)
